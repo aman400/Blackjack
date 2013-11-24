@@ -12,6 +12,10 @@ The player and the dealer are each dealt two cards initially with one of the dea
 
 Technical specifications
 ========================
-This game runs on an online compiler of pyhon available at http://www.codeskulptor.org 
+This game runs on an online compiler of python available at http://www.codeskulptor.org 
 
+<<<<<<< HEAD
 Direct link to game my game is http://www.codeskulptor.org/#user25_H9KT5RFzpc1Rz2M.py
+=======
+Direct link to game my game is http://www.codeskulptor.org/#user25_L5B4Kn5f6yebXEa.py
+>>>>>>> e71a0a245b22abe1d40f3bdd9974b60a4362d5a3

@@ -85,10 +85,8 @@ class Hand:
         return self.value
                 
     def draw(self, canvas, pos):
-        i = 0
         for card in self.cards:
-            card.draw(canvas, [pos[0] + 100*i, pos[1]])
-            i += 1
+            card.draw(canvas, [pos[0] + 100*self.cards.index(card), pos[1]])
             
 # define deck class 
 class Deck:

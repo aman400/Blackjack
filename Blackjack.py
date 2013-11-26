@@ -9,11 +9,7 @@ CARD_CENTER = (36.5, 49)
 card_images = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/cards.jfitz.png")
 button_not_working = simplegui.load_sound("https://www.dropbox.com/s/fyd6o2bu2fq5v3g/button%20not%20working.ogg?dl=1")
 won_game = simplegui.load_sound("https://www.dropbox.com/s/um0decuhbs5ljd9/won.ogg?dl=1")
-#deal_cards = simplegui.load_sound("https://www.dropbox.com/s/uumn47d5w5wcaha/new%20deal.ogg?dl=1")
 deal_new_card = simplegui.load_sound("https://www.dropbox.com/s/47zech3mdxs4nzx/deal_card.ogg?dl=1")
-button_not_working.set_volume(1)
-won_game.set_volume(1)
-#deal_cards.set_volume(0.1)
 deal_new_card.set_volume(0.3)
 
 CARD_BACK_SIZE = (71, 96)
@@ -117,24 +113,23 @@ class Deck:
 #define event handlers for buttons
 def deal():
     global outcome, in_play, player, dealer, new_deal, display_dealer, message, score
-#    deal_cards.play()
     if in_play:
         score -= 1
         outcome = 'You lose'
+        message = 'New deal?'
+        in_play = False
     else:
-        outcome = ''
-        
-    new_deal = Deck()
-    new_deal.shuffle()
-    player = Hand()
-    dealer = Hand()
-    player.add_card(new_deal.deal_card())
-    player.add_card(new_deal.deal_card())
-    dealer.add_card(new_deal.deal_card())
-    dealer.add_card(new_deal.deal_card())
-    display_dealer = False
-    in_play = True
-    message = "Hit or Stand?"
+        outcome = ''        
+        new_deal = Deck()
+        new_deal.shuffle()
+        player = Hand()
+        dealer = Hand()
+        for i in range(2):
+            player.add_card(new_deal.deal_card())
+            dealer.add_card(new_deal.deal_card())
+        display_dealer = False
+        in_play = True
+        message = "Hit or Stand?"
 
 def hit():
     """ if the hand is in play, hit the player

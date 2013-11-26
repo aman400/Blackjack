@@ -14,4 +14,4 @@ Technical specifications
 This game runs on an online compiler of python available at http://www.codeskulptor.org 
 
 
-Direct link to game my game is http://www.codeskulptor.org/#user25_H9KT5RFzpc1Rz2M.py
+Direct link to game my game is http://www.codeskulptor.org/#user26_5MdHUgWhW01ANhQ.py
